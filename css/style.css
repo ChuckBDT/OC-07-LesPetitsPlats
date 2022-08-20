@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+:root {
+  --custom-btn-blue: #3282f7;
+  --custom-btn-green: #68d9a4;
+  --custom-btn-red: #ed6454;
+  --custom-bg-light-gray: #e7e7e7;
+  --custom-bg-dark-gray: #c7bebe;
+}
+
+/* Custom classes for colors */
+
+.cs-bg-blue,
+.cs-bg-green,
+.cs-bg-red {
+  color: white;
+}
+
+.cs-bg-blue {
+  background-color: var(--custom-btn-blue);
+}
+
+.cs-bg-green {
+  background-color: var(--custom-btn-green);
+}
+
+.cs-bg-red {
+  background-color: var(--custom-btn-red);
+}
+
+.cs-bg-dark-gray {
+  background-color: var(--custom-bg-dark-gray);
+}
+
+.cs-bg-light-gray {
+  background-color: var(--custom-bg-light-gray);
+}
+
+/* End of custom classes */
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+header {
+  height: 140px;
+}
+
+header img {
+  height: 100px;
+}
+
+#searchbar input {
+  background-color: #e7e7e7;
+  height: 4.3rem;
+}
+
+#options button {
+  --bs-btn-font-size: 0.8rem;
+}
+
+#filters button {
+  --bs-btn-font-size: 1rem;
+  --bs-btn-padding-y: 1.35rem;
+  --bs-btn-padding-x: 1rem;
+  width: 45vw;
+}
+
+#search-field {
+  width: 45vw;
+  inset: 0px auto 0px;
+  z-index: 1;
+}
+
+#search-field ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style-type: none;
+}
+
+#search-field ul li {
+  cursor: pointer;
+}
+
+#search-field ul li:hover {
+  background-color: rgb(207, 207, 207);
+}
+
+#search-field input::placeholder {
+  color: rgb(216, 216, 216);
+}

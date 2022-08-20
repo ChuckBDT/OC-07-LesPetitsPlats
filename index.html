@@ -9,14 +9,225 @@
     <link rel="stylesheet" href="./bootstrap/bootstrap.min.css" />
     <script src="./bootstrap/bootstrap.bundle.min.js" defer></script>
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Custom JS -->
+    <script src="./js/pages/index.js" defer></script>
+
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <title>Les petits plats</title>
   </head>
 
   <body>
-    <header class="text-center">
+    <header
+      class="text-center d-flex justify-content-center align-items-end mb-4"
+    >
       <img src="./assets/logo/logo.png" alt="Logo Les petits plats" />
     </header>
-    <main></main>
+
+    <main class="container">
+      <section id="searchbar" class="searchbar position-relative mb-4">
+        <input
+          type="text"
+          class="form-control border-0 shadow-none p-3"
+          placeholder="Rechercher une recette"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1.56rem"
+          height="2.15rem"
+          fill="currentColor"
+          class="bi bi-search position-absolute bottom-0 end-0 translate-middle me-2"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+          />
+        </svg>
+      </section>
+      <section id="options" class="d-flex justify-content-start mb-3">
+        <button
+          class="btn cs-bg-blue shadow-none d-flex justify-content-between align-items-center"
+        >
+          Coco
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-x-circle ms-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+            />
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+            />
+          </svg>
+        </button>
+      </section>
+      <section id="filters" class="d-flex justify-content-start mb-4">
+        <div class="dropdown-ingredients position-relative">
+          <button
+            class="btn cs-bg-blue shadow-none btn-group d-flex justify-content-between align-items-center me-4"
+          >
+            Ingrédients
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-chevron-down btn-group"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+              />
+            </svg>
+          </button>
+
+          <div
+            id="search-field"
+            class="d-flex flex-column me-4 position-absolute d-none"
+          >
+            <input
+              type="text"
+              placeholder="Rechercher un ingrédient"
+              class="form-control border-0 bg-primary text-white rounded-0 rounded-top shadow-none py-4"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="white"
+              class="bi bi-chevron-up position-absolute"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+              />
+            </svg>
+
+            <ul class="bg-primary rounded-bottom text-white ps-0 pb-2 w-100">
+              <li class="w-100 ps-3">Test1</li>
+              <li class="w-100 ps-3">Test2</li>
+              <li class="w-100 ps-3">Test</li>
+              <li class="w-100 ps-3">Test</li>
+              <li class="w-100 ps-3">Test</li>
+              <li class="w-100 ps-3">Test</li>
+              <li class="w-100 ps-3">Test</li>
+              <li class="w-100 ps-3">Test</li>
+              <li class="w-100 ps-3">Test</li>
+              <li class="w-100 ps-3">Test</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dropdown-appliances">
+          <button
+            class="btn cs-bg-green shadow-none btn-group d-flex justify-content-between align-items-center me-4"
+            style="
+              --bs-btn-font-size: 1rem;
+              --bs-btn-padding-y: 1.35rem;
+              --bs-btn-padding-x: 1rem;
+              width: 10rem;
+            "
+          >
+            Appareils
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-chevron-down btn-group"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="dropdown-ustencils">
+          <button
+            class="btn cs-bg-red shadow-none btn-group d-flex justify-content-between align-items-center me-4"
+            style="
+              --bs-btn-font-size: 1rem;
+              --bs-btn-padding-y: 1.35rem;
+              --bs-btn-padding-x: 1rem;
+              width: 10rem;
+            "
+          >
+            Ustensiles
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-chevron-down btn-group"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+              />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <section id="recipes" class="row g-4">
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="card border-0 cs-bg-dark-gray">
+            <picture>
+              <img
+                class="rounded-top"
+                src="./assets/illustrations/anna-pelzer-IGfIGP5ONV0-unsplash.jpg"
+                alt=""
+                style="height: 180px; object-fit: cover; width: 100%"
+              />
+            </picture>
+            <div
+              class="container cs-bg-light-gray rounded-bottom"
+              style="height: 200px"
+            >
+              <div class="row h-25">
+                <div class="col card-title">Limonade de Coco</div>
+                <div class="col text-end">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-clock"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
+                    />
+                    <path
+                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"
+                    />
+                  </svg>
+                  10 minutes
+                </div>
+              </div>
+              <div class="row h-75 text-wrap overflow-hidden">
+                <div class="col">Ingrédients</div>
+                <div class="col">
+                  Mettre les glaçons à votre goût dans le blender, ajouter le
+                  lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer
+                  jusqu'à avoir la consistence désirée
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
   </body>
 </html>
