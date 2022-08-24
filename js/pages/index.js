@@ -11,19 +11,24 @@ init();
 
 // This one is for opening the ingredients btn
 
-const test = document.querySelector('.dropdown-ingredients');
-const test3 = document.querySelector('.dropdown-ingredients button');
-const test2 = document.getElementById('ingredients-search-field');
-const test4 = document.querySelector('#ingredients-search-field input');
-const test5 = document.querySelector('header');
+const dropdownBtn = document.querySelectorAll('.filters-dropdown button');
 
-test.addEventListener('click', () => {
-  test2.classList.remove('d-none');
-  test3.style.width = `${test2.offsetWidth}px`;
-});
+function open(e) {
+  close();
+  e.target.nextElementSibling.classList.remove('d-none');
+  e.target.style.width = `${e.target.nextElementSibling.offsetWidth}px`;
+  e.target.removeEventListener('click', open);
+  e.target.nextElementSibling.firstElementChild.lastElementChild.addEventListener('click', close);
+}
 
-test5.addEventListener('click', () => {
-  console.log('Closed');
-  test3.removeAttribute('style');
-  test2.classList.add('d-none');
+function close() {
+  dropdownBtn.forEach((el) => {
+    el.removeAttribute('style');
+    el.nextElementSibling.classList.add('d-none');
+    el.addEventListener('click', open);
+  });
+}
+
+dropdownBtn.forEach((el) => {
+  el.addEventListener('click', open);
 });

@@ -69,11 +69,12 @@
         </button>
       </section>
       <section id="filters" class="d-flex justify-content-start mb-4 flex-wrap">
-        <div class="dropdown-ingredients position-relative">
+        <div class="dropdown-ingredients filters-dropdown position-relative">
           <button
             class="btn cs-bg-blue shadow-none btn-group d-flex justify-content-between align-items-center me-4 fw-semibold"
           >
             Ingrédients
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -93,41 +94,39 @@
             id="ingredients-search-field"
             class="d-flex flex-column me-4 position-absolute d-none search-field"
           >
-            <input
-              type="text"
-              placeholder="Rechercher un ingrédient"
-              class="form-control border-0 bg-primary text-white rounded-0 rounded-top shadow-none py-4"
-            />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="white"
-              class="close-ingredients-list bi bi-chevron-up position-absolute"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+            <div class="input-container d-flex align-items-center">
+              <input
+                type="text"
+                placeholder="Rechercher un ingrédient"
+                class="form-control border-0 cs-bg-blue text-white rounded-0 rounded-top shadow-none py-4 ps-3"
               />
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="white"
+                class="close-ingredients-list bi bi-chevron-up position-absolute me-4"
+                style="right: 0; cursor: pointer"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                />
+              </svg>
+            </div>
 
             <ul
-              class="bg-primary rounded-bottom text-white ps-0 pb-2 w-100"
+              class="cs-bg-blue rounded-bottom text-white ps-0 pb-2 w-100"
             ></ul>
           </div>
         </div>
-        <div class="dropdown-appliances">
+        <div class="dropdown-appliances filters-dropdown position-relative">
           <button
             class="btn cs-bg-green shadow-none btn-group d-flex justify-content-between align-items-center me-4 fw-semibold"
-            style="
-              --bs-btn-font-size: 1rem;
-              --bs-btn-padding-y: 1.35rem;
-              --bs-btn-padding-x: 1rem;
-              width: 10rem;
-            "
           >
             Appareils
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -142,18 +141,44 @@
               />
             </svg>
           </button>
+
+          <div
+            id="appliances-search-field"
+            class="d-flex flex-column me-4 position-absolute d-none search-field"
+          >
+            <div class="input-container d-flex align-items-center">
+              <input
+                type="text"
+                placeholder="Rechercher un appareil"
+                class="form-control border-0 cs-bg-green text-white rounded-0 rounded-top shadow-none py-4 ps-3"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="white"
+                class="close-appliances-list bi bi-chevron-up position-absolute me-4"
+                style="right: 0; cursor: pointer"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                />
+              </svg>
+            </div>
+
+            <ul
+              class="cs-bg-green rounded-bottom text-white ps-0 pb-2 w-100"
+            ></ul>
+          </div>
         </div>
-        <div class="dropdown-ustencils">
+        <div class="dropdown-ustensils filters-dropdown position-relative">
           <button
             class="btn cs-bg-red shadow-none btn-group d-flex justify-content-between align-items-center me-4 fw-semibold"
-            style="
-              --bs-btn-font-size: 1rem;
-              --bs-btn-padding-y: 1.35rem;
-              --bs-btn-padding-x: 1rem;
-              width: 10rem;
-            "
           >
             Ustensiles
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -168,6 +193,37 @@
               />
             </svg>
           </button>
+
+          <div
+            id="ustensils-search-field"
+            class="d-flex flex-column me-4 position-absolute d-none search-field"
+          >
+            <div class="input-container d-flex align-items-center">
+              <input
+                type="text"
+                placeholder="Rechercher un ustensile"
+                class="form-control border-0 cs-bg-red text-white rounded-0 rounded-top shadow-none py-4 ps-3"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="white"
+                class="close-ustensils-list bi bi-chevron-up position-absolute me-4"
+                style="right: 0; cursor: pointer"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                />
+              </svg>
+            </div>
+
+            <ul
+              class="cs-bg-red rounded-bottom text-white ps-0 pb-2 w-100"
+            ></ul>
+          </div>
         </div>
       </section>
 
