@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/style.css" />
 
     <!-- Custom JS -->
-    <script src="./js/pages/index.js" defer></script>
+    <script src="./js/pages/index.js" type="module" defer></script>
 
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <title>Les petits plats</title>
@@ -68,10 +68,10 @@
           </svg>
         </button>
       </section>
-      <section id="filters" class="d-flex justify-content-start mb-4">
+      <section id="filters" class="d-flex justify-content-start mb-4 flex-wrap">
         <div class="dropdown-ingredients position-relative">
           <button
-            class="btn cs-bg-blue shadow-none btn-group d-flex justify-content-between align-items-center me-4"
+            class="btn cs-bg-blue shadow-none btn-group d-flex justify-content-between align-items-center me-4 fw-semibold"
           >
             Ingrédients
             <svg
@@ -90,8 +90,8 @@
           </button>
 
           <div
-            id="search-field"
-            class="d-flex flex-column me-4 position-absolute d-none"
+            id="ingredients-search-field"
+            class="d-flex flex-column me-4 position-absolute d-none search-field"
           >
             <input
               type="text"
@@ -103,7 +103,7 @@
               width="16"
               height="16"
               fill="white"
-              class="bi bi-chevron-up position-absolute"
+              class="close-ingredients-list bi bi-chevron-up position-absolute"
               viewBox="0 0 16 16"
             >
               <path
@@ -112,23 +112,14 @@
               />
             </svg>
 
-            <ul class="bg-primary rounded-bottom text-white ps-0 pb-2 w-100">
-              <li class="w-100 ps-3">Test1</li>
-              <li class="w-100 ps-3">Test2</li>
-              <li class="w-100 ps-3">Test</li>
-              <li class="w-100 ps-3">Test</li>
-              <li class="w-100 ps-3">Test</li>
-              <li class="w-100 ps-3">Test</li>
-              <li class="w-100 ps-3">Test</li>
-              <li class="w-100 ps-3">Test</li>
-              <li class="w-100 ps-3">Test</li>
-              <li class="w-100 ps-3">Test</li>
-            </ul>
+            <ul
+              class="bg-primary rounded-bottom text-white ps-0 pb-2 w-100"
+            ></ul>
           </div>
         </div>
         <div class="dropdown-appliances">
           <button
-            class="btn cs-bg-green shadow-none btn-group d-flex justify-content-between align-items-center me-4"
+            class="btn cs-bg-green shadow-none btn-group d-flex justify-content-between align-items-center me-4 fw-semibold"
             style="
               --bs-btn-font-size: 1rem;
               --bs-btn-padding-y: 1.35rem;
@@ -154,7 +145,7 @@
         </div>
         <div class="dropdown-ustencils">
           <button
-            class="btn cs-bg-red shadow-none btn-group d-flex justify-content-between align-items-center me-4"
+            class="btn cs-bg-red shadow-none btn-group d-flex justify-content-between align-items-center me-4 fw-semibold"
             style="
               --bs-btn-font-size: 1rem;
               --bs-btn-padding-y: 1.35rem;
@@ -180,54 +171,7 @@
         </div>
       </section>
 
-      <section id="recipes" class="row g-4">
-        <article class="col-12 col-md-6 col-lg-4">
-          <div class="card border-0 cs-bg-dark-gray">
-            <picture>
-              <img
-                class="rounded-top"
-                src="./assets/illustrations/anna-pelzer-IGfIGP5ONV0-unsplash.jpg"
-                alt=""
-                style="height: 180px; object-fit: cover; width: 100%"
-              />
-            </picture>
-            <div
-              class="container cs-bg-light-gray rounded-bottom"
-              style="height: 200px"
-            >
-              <div class="row h-25">
-                <div class="col card-title">Limonade de Coco</div>
-                <div class="col text-end">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-clock"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
-                    />
-                    <path
-                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"
-                    />
-                  </svg>
-                  10 minutes
-                </div>
-              </div>
-              <div class="row h-75 text-wrap overflow-hidden">
-                <div class="col">Ingrédients</div>
-                <div class="col">
-                  Mettre les glaçons à votre goût dans le blender, ajouter le
-                  lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer
-                  jusqu'à avoir la consistence désirée
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
+      <section id="recipes" class="row g-4 mb-5"></section>
     </main>
   </body>
 </html>

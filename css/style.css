@@ -53,6 +53,11 @@ header img {
 #searchbar input {
   background-color: #e7e7e7;
   height: 4.3rem;
+  font-size: 1.125rem;
+}
+
+#searchbar input::placeholder {
+  color: #aaaaaa;
 }
 
 #options button {
@@ -63,29 +68,38 @@ header img {
   --bs-btn-font-size: 1rem;
   --bs-btn-padding-y: 1.35rem;
   --bs-btn-padding-x: 1rem;
-  width: 45vw;
+  width: 10rem;
+  font-size: 1.125rem;
 }
 
-#search-field {
-  width: 45vw;
+.search-field {
   inset: 0px auto 0px;
   z-index: 1;
 }
 
-#search-field ul {
+.search-field ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   list-style-type: none;
 }
 
-#search-field ul li {
+.search-field ul li {
   cursor: pointer;
 }
 
-#search-field ul li:hover {
+.search-field ul li:hover {
   background-color: rgb(207, 207, 207);
 }
 
-#search-field input::placeholder {
+.search-field input::placeholder {
   color: rgb(216, 216, 216);
+}
+
+#ingredients-search-field {
+  width: max-content;
+}
+
+.card-title {
+  font-size: 1.125rem;
 }
