@@ -6,6 +6,7 @@ export default function recipeFactory(data) {
   const randomPictureNumber = Math.floor(Math.random() * (20 - 1)) + 1;
   let ingredientElement = '';
 
+  el.classList.add('recipe-generated');
   el.classList.add('col-12');
   el.classList.add('col-md-6');
   el.classList.add('col-lg-4');
@@ -15,16 +16,16 @@ export default function recipeFactory(data) {
   ingredients.forEach((element) => {
     const elementTwo = Object.values(element);
 
-    if (elementTwo[1] == undefined) {
+    if (elementTwo[1] === undefined) {
       elementTwo[1] = '';
     } else {
       elementTwo[0] += ': ';
     }
-    if (elementTwo[2] == undefined) {
+    if (elementTwo[2] === undefined) {
       elementTwo[2] = '';
     }
 
-    ingredientElement = (`${elementTwo[0] + elementTwo[1]} ${elementTwo[2]}`);
+    ingredientElement = (`<b>${`${elementTwo[0]}</b> ${elementTwo[1]}`} ${elementTwo[2]}`);
     const p = document.createElement('p');
     p.innerHTML = ingredientElement;
     p.classList.add('m-0');
@@ -49,8 +50,8 @@ export default function recipeFactory(data) {
               style="height: 200px"
             >
               <div class="row h-25">
-                <div class="col m-0 card-title d-flex justify-content-start align-items-center">${name}</div>
-                <div class="col text-end d-flex justify-content-end align-items-center fw-semibold">
+                <div class="col-8 m-0 card-title d-flex justify-content-start align-items-center text-nowrap overflow-hidden">${name}</div>
+                <div class="col-4 text-end d-flex justify-content-end align-items-center fw-semibold">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -69,9 +70,9 @@ export default function recipeFactory(data) {
                   ${time} min
                 </div>
               </div>
-              <div class="row h-75 text-wrap overflow-hidden">
+              <div class="card-description row h-75 text-wrap overflow-hidden">
                 <div class="col m-0 ">${ingredientContent.innerHTML}</div>
-                <div class="col">
+                <div class="col h-100 overflow-visible">
                   ${description}
                 </div>
               </div>

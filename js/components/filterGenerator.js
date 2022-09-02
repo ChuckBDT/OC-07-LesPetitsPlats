@@ -1,18 +1,18 @@
-import { recipes } from '../datas/recipes.js';
 import filterFactory from '../factories/filterFactory.js';
 
-export default function filterGenerator() {
+export default function filterGenerator(recipesList) {
+  const options = document.getElementById('options');
+  const ingredientsList = document.querySelector('#ingredients-search-field ul');
+  const ustensilsList = document.querySelector('#ustensils-search-field ul');
+  const appliancesList = document.querySelector('#appliances-search-field ul');
   const appliances = [];
   const ingredients = [];
   let ustensils = [];
   const ingredtwo = [];
-  const ingredientsList = document.querySelector('#ingredients-search-field ul');
-  const ustensilsList = document.querySelector('#ustensils-search-field ul');
-  const appliancesList = document.querySelector('#appliances-search-field ul');
 
   // Searching appliances, ingredients and ustensils inside array
 
-  recipes.forEach((recipe) => {
+  recipesList.forEach((recipe) => {
     appliances.push(recipe.appliance);
     ingredients.push(recipe.ingredients);
     ustensils.push(recipe.ustensils);
@@ -24,7 +24,8 @@ export default function filterGenerator() {
 
   ustensils = ustensils.flat();
 
-  // Removing all duplicates
+  // Removing all duplicates and converting sets to arrays
+
   const setIngredients = new Set(ingredtwo);
   const finalIngredients = Array.from(setIngredients);
 
@@ -36,18 +37,21 @@ export default function filterGenerator() {
 
   // Adding each element to his list
 
-  for (let i = 0; i < 30; i++) {
-    const element = filterFactory(finalIngredients[i]);
-    ingredientsList.append(element);
+  for (let i = 0; i < finalIngredients.length; i++) {
+    const element = filterFactory(finalIngredients[i], ingredientsList.classList[0]);
+    ingredientsList.append(element[0]);
+    options.append(element[1]);
   }
 
-  for (let i = 0; i < 30; i++) {
-    const element = filterFactory(finalAppliances[i]);
-    appliancesList.append(element);
+  for (let i = 0; i < finalAppliances.length; i++) {
+    const element = filterFactory(finalAppliances[i], appliancesList.classList[0]);
+    appliancesList.append(element[0]);
+    options.append(element[1]);
   }
 
-  for (let i = 0; i < 30; i++) {
-    const element = filterFactory(finalUstensils[i]);
-    ustensilsList.append(element);
+  for (let i = 0; i < finalUstensils.length; i++) {
+    const element = filterFactory(finalUstensils[i], ustensilsList.classList[0]);
+    ustensilsList.append(element[0]);
+    options.append(element[1]);
   }
 }
