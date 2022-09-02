@@ -46,28 +46,10 @@
           />
         </svg>
       </section>
-      <section id="options" class="d-flex justify-content-start mb-3">
-        <button
-          class="btn cs-bg-blue shadow-none d-flex justify-content-between align-items-center"
-        >
-          Coco
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-x-circle ms-2"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-            />
-            <path
-              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-            />
-          </svg>
-        </button>
-      </section>
+      <section
+        id="options"
+        class="d-flex justify-content-start mb-3 flex-wrap"
+      ></section>
       <section id="filters" class="d-flex justify-content-start mb-4 flex-wrap">
         <div class="dropdown-ingredients filters-dropdown position-relative">
           <button
@@ -106,16 +88,16 @@
                 height="16"
                 fill="white"
                 class="close-ingredients-list bi bi-chevron-up position-absolute me-4"
-                style="right: 0; cursor: pointer"
                 viewBox="0 0 16 16"
+                style="right: 0; cursor: pointer"
               >
                 <path
                   fill-rule="evenodd"
-                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                  d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
                 />
               </svg>
             </div>
-
+            <!-- Important : Keep the background color style first for Javascript purposes -->
             <ul
               class="cs-bg-blue rounded-bottom text-white ps-0 pb-2 w-100"
             ></ul>
@@ -158,16 +140,16 @@
                 height="16"
                 fill="white"
                 class="close-appliances-list bi bi-chevron-up position-absolute me-4"
-                style="right: 0; cursor: pointer"
                 viewBox="0 0 16 16"
+                style="right: 0; cursor: pointer"
               >
                 <path
                   fill-rule="evenodd"
-                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                  d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
                 />
               </svg>
             </div>
-
+            <!-- Important : Keep the background color style first for Javascript purposes -->
             <ul
               class="cs-bg-green rounded-bottom text-white ps-0 pb-2 w-100"
             ></ul>
@@ -210,21 +192,28 @@
                 height="16"
                 fill="white"
                 class="close-ustensils-list bi bi-chevron-up position-absolute me-4"
-                style="right: 0; cursor: pointer"
                 viewBox="0 0 16 16"
+                style="right: 0; cursor: pointer"
               >
                 <path
                   fill-rule="evenodd"
-                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                  d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
                 />
               </svg>
             </div>
-
+            <!-- Important : Keep the background color style first for Javascript purposes -->
             <ul
               class="cs-bg-red rounded-bottom text-white ps-0 pb-2 w-100"
             ></ul>
           </div>
         </div>
+        <p
+          id="noresult-alert"
+          class="cs-logo-red rounded w-100 text-center my-5 py-3 d-none"
+        >
+          Aucune recette ne correspond à votre critère… vous pouvez chercher «
+          tarte aux pommes », « poisson », etc.
+        </p>
       </section>
 
       <section id="recipes" class="row g-4 mb-5"></section>

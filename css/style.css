@@ -4,36 +4,59 @@
   --custom-btn-blue: #3282f7;
   --custom-btn-green: #68d9a4;
   --custom-btn-red: #ed6454;
+  --custom-logo-red: #d14e4f;
   --custom-bg-light-gray: #e7e7e7;
   --custom-bg-dark-gray: #c7bebe;
 }
 
 /* Custom classes for colors */
 
-.cs-bg-blue,
-.cs-bg-green,
-.cs-bg-red {
-  color: white;
-}
-
 .cs-bg-blue {
-  background-color: var(--custom-btn-blue);
+  background-color: var(--custom-btn-blue) !important;
 }
 
 .cs-bg-green {
-  background-color: var(--custom-btn-green);
+  background-color: var(--custom-btn-green) !important;
 }
 
 .cs-bg-red {
-  background-color: var(--custom-btn-red);
+  background-color: var(--custom-btn-red) !important;
+}
+
+.cs-logo-red {
+  background-color: var(--custom-logo-red) !important;
 }
 
 .cs-bg-dark-gray {
-  background-color: var(--custom-bg-dark-gray);
+  background-color: var(--custom-bg-dark-gray) !important;
 }
 
 .cs-bg-light-gray {
-  background-color: var(--custom-bg-light-gray);
+  background-color: var(--custom-bg-light-gray) !important;
+}
+
+.cs-bg-blue,
+.cs-bg-green,
+.cs-bg-red,
+.cs-logo-red,
+.cs-bg-blue:hover,
+.cs-bg-green:hover,
+.cs-bg-red:hover,
+.cs-logo-red:hover,
+.cs-bg-blue:disabled,
+.cs-bg-green:disabled,
+.cs-bg-red:disabled,
+.cs-logo-red:disabled {
+  color: white;
+  border: none;
+}
+
+.cs-bg-blue,
+.cs-bg-green,
+.cs-bg-red,
+.cs-logo-red {
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
 }
 
 /* End of custom classes */
@@ -60,6 +83,10 @@ header img {
   color: #aaaaaa;
 }
 
+#options {
+  gap: 10px;
+}
+
 #options button {
   --bs-btn-font-size: 0.8rem;
 }
@@ -72,6 +99,12 @@ header img {
   font-size: 1.125rem;
 }
 
+.filters-dropdown button:hover,
+#options button:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease-out;
+}
+
 .search-field {
   inset: 0px auto 0px;
   z-index: 1;
@@ -80,7 +113,7 @@ header img {
 .search-field ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(10, 1fr);
+
   list-style-type: none;
 }
 
@@ -93,7 +126,7 @@ header img {
 }
 
 .search-field input::placeholder {
-  color: rgb(216, 216, 216);
+  color: rgb(245, 245, 245);
 }
 
 #ingredients-search-field,
@@ -104,4 +137,9 @@ header img {
 
 .card-title {
   font-size: 1.125rem;
+  text-overflow: ellipsis;
+}
+
+.card-description {
+  font-size: 0.75rem;
 }
