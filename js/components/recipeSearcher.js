@@ -16,8 +16,8 @@ export default function recipeSearcher() {
       const inputFilter = e.target.value.toLowerCase();
       const inputArray = inputFilter.split(' ');
 
-      inputArray.forEach((value) => {
-        recipes.forEach((recipe) => {
+      recipes.forEach((recipe) => {
+        inputArray.forEach((value) => {
           if (JSON.stringify(recipe).toLowerCase().includes(value.toLowerCase())) {
             searchResult.push(recipe);
           }
