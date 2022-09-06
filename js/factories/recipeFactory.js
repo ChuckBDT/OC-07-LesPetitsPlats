@@ -72,7 +72,7 @@ export default function recipeFactory(data) {
               </div>
               <div class="card-description row h-75 text-wrap overflow-hidden">
                 <div class="col m-0 ">${ingredientContent.innerHTML}</div>
-                <div class="col h-100 overflow-visible">
+                <div class="col h-100 overflow-auto">
                   ${description}
                 </div>
               </div>
