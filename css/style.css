@@ -113,12 +113,15 @@ header img {
 .search-field ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
   list-style-type: none;
 }
 
 .search-field ul li {
   cursor: pointer;
+  max-width: 12rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .search-field ul li:hover {
@@ -142,4 +145,24 @@ header img {
 
 .card-description {
   font-size: 0.75rem;
+}
+
+/* Thanks to https://codepen.io/aurer/pen/kGRNVw */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+::-webkit-scrollbar-thumb:active {
+  background: var(--custom-logo-red);
 }

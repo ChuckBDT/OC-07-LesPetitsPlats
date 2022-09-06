@@ -10,6 +10,10 @@ export default function filterGenerator(recipesList) {
   let ustensils = [];
   const ingredtwo = [];
 
+  ingredientsList.innerHTML = '';
+  appliancesList.innerHTML = '';
+  ustensilsList.innerHTML = '';
+
   // Searching appliances, ingredients and ustensils inside array
 
   recipesList.forEach((recipe) => {
@@ -39,18 +43,27 @@ export default function filterGenerator(recipesList) {
 
   for (let i = 0; i < finalIngredients.length; i++) {
     const element = filterFactory(finalIngredients[i], ingredientsList.classList[0]);
+    if (i > 29) {
+      element[0].classList.add('d-none');
+    }
     ingredientsList.append(element[0]);
     options.append(element[1]);
   }
 
   for (let i = 0; i < finalAppliances.length; i++) {
     const element = filterFactory(finalAppliances[i], appliancesList.classList[0]);
+    if (i > 29) {
+      element[0].classList.add('d-none');
+    }
     appliancesList.append(element[0]);
     options.append(element[1]);
   }
 
   for (let i = 0; i < finalUstensils.length; i++) {
     const element = filterFactory(finalUstensils[i], ustensilsList.classList[0]);
+    if (i > 29) {
+      element[0].classList.add('d-none');
+    }
     ustensilsList.append(element[0]);
     options.append(element[1]);
   }

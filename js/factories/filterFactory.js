@@ -6,7 +6,7 @@ export default function filterFactory(data, colour) {
   filterLi.classList.add('w-100');
   filterLi.classList.add('px-3');
   filterLi.classList.add('py-1');
-  filterLi.classList.add('text-wrap');
+
   filterLi.innerHTML = data;
 
   Filters.push(filterLi);

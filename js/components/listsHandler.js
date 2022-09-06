@@ -2,6 +2,7 @@
 
 export default function listsHandler() {
   const dropdownBtn = document.querySelectorAll('.filters-dropdown button');
+  const recipeInput = document.querySelector('#searchbar > input');
 
   function open(e) {
     close();
@@ -24,6 +25,8 @@ export default function listsHandler() {
   dropdownBtn.forEach((el) => {
     el.addEventListener('click', open);
   });
+
+  recipeInput.addEventListener('click', close);
 
   return close();
 }
