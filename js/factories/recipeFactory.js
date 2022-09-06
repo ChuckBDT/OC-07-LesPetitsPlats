@@ -1,9 +1,13 @@
 export default function recipeFactory(data) {
   const {
-    name, description, ingredients, time,
+    name, description, ingredients, time, id,
   } = data;
   const el = document.createElement('article');
-  const randomPictureNumber = Math.floor(Math.random() * (20 - 1)) + 1;
+  const idPictureNumber = () => {
+    if (id <= 20) { return id; } if (id % 2 !== 0) { return ((id / 2) - (13 / 2)); } return ((id / 2) - (5));
+  };
+  const pictureNumber = idPictureNumber();
+
   let ingredientElement = '';
 
   el.classList.add('recipe-generated');
@@ -36,10 +40,10 @@ export default function recipeFactory(data) {
   const recipe = `
           <div class="card border-0 cs-bg-dark-gray">
             <picture>
-              <source type="image/webp" src="./assets/illustrations/${randomPictureNumber}.webp">
+              <source type="image/webp" src="./assets/illustrations/${pictureNumber}.webp">
               <img
                 class="rounded-top"
-                src="./assets/illustrations/${randomPictureNumber}.jpg"
+                src="./assets/illustrations/${pictureNumber}.jpg"
                 loading="lazy"
                 alt=""
                 style="height: 180px; object-fit: cover; width: 100%"
