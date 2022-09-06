@@ -18,8 +18,8 @@ export default function recipeSearcher() {
       const inputArray = inputFilter.split(' ');
 
       for (const recipe of recipes) {
-        for (let i = 0; i < inputArray.length; i++) {
-          if (JSON.stringify(recipe).toLowerCase().includes(inputArray[i].toLowerCase())) {
+        for (const word of inputArray) {
+          if (JSON.stringify(recipe).toLowerCase().includes(word.toLowerCase())) {
             searchResult.push(recipe);
           }
         }
