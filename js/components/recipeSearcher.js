@@ -16,7 +16,7 @@ export default function recipeSearcher() {
       const inputArray = e.target.value.toLowerCase().split(' ');
 
       recipes.forEach((recipe) => {
-        const wordIsIncluded = (word) => JSON.stringify(recipe).toLowerCase().includes(word.toLowerCase());
+        const wordIsIncluded = (word) => JSON.stringify(recipe).toLowerCase().includes(word);
         if (inputArray.every(wordIsIncluded)) {
           searchResult.push(recipe);
         }
