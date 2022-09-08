@@ -13,44 +13,26 @@ export default function recipeSearcher() {
     listsHandler();
     if (e.target.value.length >= 3 || e.target.value === '') {
       searchResult.length = 0;
-      const inputFilter = e.target.value.toLowerCase();
-      const inputArray = inputFilter.split(' ');
+      const inputArray = e.target.value.toLowerCase().split(' ');
 
       recipes.forEach((recipe) => {
-        inputArray.forEach((value) => {
-          if (JSON.stringify(recipe).toLowerCase().includes(value.toLowerCase())) {
-            searchResult.push(recipe);
-          }
-        });
-      });
-
-      // Thanks to https://stackoverflow.com/questions/19395257/how-to-count-duplicate-value-in-an-array-in-javascript
-      const count = {};
-      searchResult.forEach((i) => {
-        count[i.id] = (count[i.id] || 0) + 1;
-      });
-      // End
-
-      const arrayCount = Object.entries(count);
-      const finalResult = [];
-      arrayCount.forEach((value) => {
-        if (value[1] === inputArray.length) {
-          const tryIt = recipes.filter((recipe) => recipe.id == value[0]);
-          finalResult.push(tryIt[0]);
+        const wordIsIncluded = (word) => JSON.stringify(recipe).toLowerCase().includes(word.toLowerCase());
+        if (inputArray.every(wordIsIncluded)) {
+          searchResult.push(recipe);
         }
       });
 
       //   Pushing the search results to the factories
-      recipeGenerator(finalResult);
-      filterGenerator(finalResult);
+      recipeGenerator(searchResult);
+      filterGenerator(searchResult);
 
       //   Handling the behavior of the filter's buttons depending of the search result
-      if (finalResult.length === 1) {
+      if (searchResult.length === 1) {
         filtersButtons.forEach((button) => {
           button.setAttribute('disabled', 'true');
         });
         noResultAlert.classList.add('d-none');
-      } else if (finalResult.length === 0) {
+      } else if (searchResult.length === 0) {
         filtersButtons.forEach((button) => {
           button.setAttribute('disabled', 'true');
         });
