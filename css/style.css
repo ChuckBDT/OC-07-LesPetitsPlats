@@ -97,6 +97,11 @@ header img {
   --bs-btn-padding-x: 1rem;
   width: 10rem;
   font-size: 1.125rem;
+  cursor: pointer;
+}
+
+#filters button svg {
+  pointer-events: none;
 }
 
 .filters-dropdown button:hover,
@@ -125,7 +130,7 @@ header img {
 }
 
 .search-field ul li:hover {
-  background-color: rgb(207, 207, 207);
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 .search-field input::placeholder {
@@ -145,6 +150,10 @@ header img {
 
 .card-description {
   font-size: 0.75rem;
+}
+
+.no-search {
+  display: none;
 }
 
 /* Thanks to https://codepen.io/aurer/pen/kGRNVw */

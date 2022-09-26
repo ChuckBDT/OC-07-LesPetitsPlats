@@ -7,13 +7,14 @@ export default function recipeFactory(data) {
     if (id <= 20) { return id; } if (id % 2 !== 0) { return ((id / 2) - (13 / 2)); } return ((id / 2) - (5));
   };
   const pictureNumber = idPictureNumber();
-
+  const lazyAttribute = () => { if (id > 6) return 'loading=lazy'; return ''; };
   let ingredientElement = '';
 
   el.classList.add('recipe-generated');
   el.classList.add('col-12');
   el.classList.add('col-md-6');
   el.classList.add('col-lg-4');
+  el.dataset.recipeId = id;
 
   const ingredientContent = document.createElement('div');
 
@@ -44,9 +45,9 @@ export default function recipeFactory(data) {
               <img
                 class="rounded-top"
                 src="./assets/illustrations/${pictureNumber}.jpg"
-                loading="lazy"
                 alt=""
                 style="height: 180px; object-fit: cover; width: 100%"
+                ${lazyAttribute()}
               />
             </picture>
             <div
