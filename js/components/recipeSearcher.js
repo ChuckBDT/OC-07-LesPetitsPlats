@@ -1,6 +1,7 @@
 import { recipes } from '../datas/recipes.js';
 import { optionsArray } from './filterGenerator.js';
 import { buttonsStates, closeFiltList } from './buttonsBehavior.js';
+import { listDisplay } from './filterSearcher.js';
 
 // Thanks to https://stackoverflow.com/a/37511463
 export const strNormalizer = (string) => string.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -58,6 +59,7 @@ export default function recipeSearcher() {
       recipesDisplayer(searchResult);
       filterDisplayer(searchResult);
       buttonsStates();
+      listDisplay();
     }
   });
 }

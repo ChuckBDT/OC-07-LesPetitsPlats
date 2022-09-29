@@ -105,9 +105,12 @@ header img {
 }
 
 .filters-dropdown button:hover,
-#options button:hover {
+#options button:hover,
+.filters-dropdown button:focus,
+#options button:focus {
   opacity: 0.8;
   transition: opacity 0.2s ease-out;
+  color: white;
 }
 
 .search-field {
@@ -118,9 +121,24 @@ header img {
 .search-field ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-auto-rows: 0px;
   list-style-type: none;
 }
 
+@media (max-width: 768px) {
+  .search-field ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+}
+
+@media (max-width: 425px) {
+  .search-field ul {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+}
 .search-field ul li {
   cursor: pointer;
   max-width: 12rem;
@@ -141,11 +159,11 @@ header img {
 #appliances-search-field,
 #ustensils-search-field {
   width: max-content;
+  height: max-content;
 }
 
 .card-title {
   font-size: 1.125rem;
-  text-overflow: ellipsis;
 }
 
 .card-description {

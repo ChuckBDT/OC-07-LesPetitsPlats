@@ -26,6 +26,7 @@ export function buttonsStates() {
 
 // Handle the open and close states of the main filter buttons
 const dropdownBtn = document.querySelectorAll('.filters-dropdown button');
+const mediaQueryMedium = window.matchMedia('(max-width: 768px)');
 
 function autoCloseList(event) {
   if (event.target.closest('#filters div')) return;
@@ -45,12 +46,20 @@ export function closeFiltList() {
 }
 
 function openFiltList(e) {
+  const mainSearchInput = document.querySelector('#searchbar > input');
   const openedField = document.querySelectorAll('.search-field:not(.d-none)');
   const inputField = e.target.nextElementSibling.firstElementChild.firstElementChild;
+  const filtersList = e.target.nextElementSibling.lastElementChild;
+  filtersList.style.removeProperty('grid-template-columns');
   if (openedField.length === 1) closeFiltList();
   e.target.nextElementSibling.classList.remove('d-none');
-  const width = e.target.nextElementSibling.offsetWidth - 10;
-  e.target.style.width = `${width}px`;
+  if (mediaQueryMedium.matches) {
+    e.target.nextElementSibling.style.width = `${mainSearchInput.offsetWidth}px`;
+  } else {
+    const width = e.target.nextElementSibling.offsetWidth - 10;
+    e.target.style.width = `${width}px`;
+  }
+
   inputField.focus();
   document.addEventListener('click', autoCloseList);
 }
