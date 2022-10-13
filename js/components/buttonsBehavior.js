@@ -53,8 +53,10 @@ function openFiltList(e) {
   filtersList.style.removeProperty('grid-template-columns');
   if (openedField.length === 1) closeFiltList();
   e.target.nextElementSibling.classList.remove('d-none');
+
   if (mediaQueryMedium.matches) {
     e.target.nextElementSibling.style.width = `${mainSearchInput.offsetWidth}px`;
+    e.target.style.width = `${mainSearchInput.offsetWidth}px`;
   } else {
     const width = e.target.nextElementSibling.offsetWidth - 10;
     e.target.style.width = `${width}px`;
