@@ -17,7 +17,6 @@ export default function filterFactory(data, colour) {
   filtersButton.classList.add('d-flex');
   filtersButton.classList.add('justify-content-between');
   filtersButton.classList.add('align-items-center');
-  filtersButton.classList.add('d-none');
 
   filtersButton.innerHTML = `
     ${data}

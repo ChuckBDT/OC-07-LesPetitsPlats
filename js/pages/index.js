@@ -1,15 +1,17 @@
 import filterGenerator from '../components/filterGenerator.js';
 import recipeGenerator from '../components/recipeGenerator.js';
-import listsHandler from '../components/listsHandler.js';
+import { btnInit } from '../components/buttonsBehavior.js';
 import recipeSearcher from '../components/recipeSearcher.js';
+import filterSearcher from '../components/filterSearcher.js';
 import { recipes } from '../datas/recipes.js';
 
 function init() {
   console.log('init - native Loops version');
   filterGenerator(recipes);
   recipeGenerator(recipes);
-  listsHandler();
+  btnInit();
   recipeSearcher();
+  filterSearcher();
 }
 
 init();
